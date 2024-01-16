@@ -50,7 +50,7 @@
     "slug.js": "^3.0.0",
     "spotify-uri": "^4.0.0",
     "tesseract.js": "^5.0.2",
-    "uuid": "^8.3.2",
+    "uuid": "^9.0.1",
     "y2mate-api": "github:krxuv/y2mate-api"
   },
   "devDependencies": {
