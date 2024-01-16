@@ -1,0 +1,61 @@
+{
+  "name": "filefetcher-bot",
+  "displayName": "FileFetcher Bot",
+  "version": "2.0.1",
+  "description": "Serverless Telegram bot for Downloader, Developer tools, and etc.",
+  "author": "Krxuv a.k.a Kimimaru",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krxuv/filefetcher-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/krxuv/filefetcher-bot/issues"
+  },
+  "homepage": "https://github.com/krxuv/filefetcher-bot#readme",
+  "keywords": [
+    "devtools",
+    "development",
+    "tools",
+    "serverless",
+    "vercel",
+    "vercel-serverless",
+    "downloader",
+    "instagram",
+    "youtube",
+    "tiktok",
+    "facebook",
+    "twitter",
+    "socialmedia",
+    "telegram",
+    "bottelegram",
+    "bot"
+  ],
+  "dependencies": {
+    "arg": "^5.0.1",
+    "axios": "^1.5.0",
+    "bcryptjs": "^2.4.3",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.0.0",
+    "eh-url": "^2.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "google-sr": "^3.2.1",
+    "kurzer-url": "^4.0.0",
+    "md5": "^2.3.0",
+    "network-speed": "^2.1.1",
+    "node-telegram-bot-api": "^0.56.0",
+    "qs": "^6.11.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "slug.js": "^3.0.0",
+    "spotify-uri": "^4.0.0",
+    "tesseract.js": "^5.0.2",
+    "uuid": "^8.3.2",
+    "y2mate-api": "github:krxuv/y2mate-api"
+  },
+  "devDependencies": {
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}
