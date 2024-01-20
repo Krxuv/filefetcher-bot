@@ -13,7 +13,8 @@ class Funcs {
         url,
         headers: {
           'DNT': 1,
-          'Upgrade-Insecure-Requests': 1
+          'Upgrade-Insecure-Requests': 1,
+          'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'
         },
         responseType: 'arraybuffer'
       })
