@@ -91,11 +91,12 @@ class Spotify {
           await bot.editMessageText(`Downloading song ${getdata.metadata.title} - ${getdata.metadata.artists}, please wait...`, { chat_id: chatId, message_id: load.message_id })
           let buff = await Func.getBuffer(getdata.link);
           await fs.writeFileSync('/tmp/'+fname, buff);
-          return bot.sendAudio(chatId, '/tmp/'+fname, { caption: `Success download song ${getdata.metadata.title} - ${getdata.metadata.artists}`});
+          let buf = await fs.readFileSync(`/tmp/${fname}`)
+          return bot.sendAudio(chatId, buf, { caption: `Success download song ${getdata.metadata.title} - ${getdata.metadata.artists}`});
           //await bot.deleteMessage(chatId, load.message_id);
           //await fs.unlinkSync('/tmp/'+fname);
         } else {
-          await bot.editMessageText('Error, failed to get data', { chat_id: chatId, message_id: load.message_id })
+          //await bot.editMessageText('Error, failed to get data', { chat_id: chatId, message_id: load.message_id })
         }
       } else {
         let getdata = await this.spotifyScraper(url, 'download');
@@ -104,16 +105,17 @@ class Spotify {
           await bot.editMessageText(`Downloading song ${getdata.metadata.title} - ${getdata.metadata.artists}, please wait...`, { chat_id: chatId, message_id: load.message_id })
           let buff = await Func.getBuffer(getdata.link);
           await fs.writeFileSync('/tmp/'+fname, buff);
-          return bot.sendAudio(chatId, '/tmp/'+fname, { caption: `Success download song ${getdata.metadata.title} - ${getdata.metadata.artists}`});
+          let buf = await fs.readFileSync(`/tmp/${fname}`)
+          return bot.sendAudio(chatId, buf, { caption: `Success download song ${getdata.metadata.title} - ${getdata.metadata.artists}`});
           //await bot.deleteMessage(chatId, load.message_id);
           //await fs.unlinkSync('/tmp/'+fname);
         } else {
-          await bot.editMessageText('Error, failed to get data', { chat_id: chatId, message_id: load.message_id })
+          //await bot.editMessageText('Error, failed to get data', { chat_id: chatId, message_id: load.message_id })
         }
       }
     } catch (err) {
       await bot.sendMessage(process.env.OWNER_ID, `[ ERROR MESSAGE ]\n\n• Username: ${userName ? "@"+userName : '-'}\n• Function: getSpotifySong()\n• Url: ${url}\n\n${err}`.trim());
-      return bot.editMessageText('Failed to download song!', { chat_id: chatId, message_id: load.message_id })
+      //return bot.editMessageText('Failed to download song!', { chat_id: chatId, message_id: load.message_id })
     }
   }
 }
