@@ -91,9 +91,9 @@ class Spotify {
           await bot.editMessageText(`Downloading song ${getdata.metadata.title} - ${getdata.metadata.artists}, please wait...`, { chat_id: chatId, message_id: load.message_id })
           let buff = await Func.getBuffer(getdata.link);
           await fs.writeFileSync('/tmp/'+fname, buff);
-          await bot.sendAudio(chatId, '/tmp/'+fname, { caption: `Success download song ${getdata.metadata.title} - ${getdata.metadata.artists}`});
-          await bot.deleteMessage(chatId, load.message_id);
-          await fs.unlinkSync('/tmp/'+fname);
+          return bot.sendAudio(chatId, '/tmp/'+fname, { caption: `Success download song ${getdata.metadata.title} - ${getdata.metadata.artists}`});
+          //await bot.deleteMessage(chatId, load.message_id);
+          //await fs.unlinkSync('/tmp/'+fname);
         } else {
           await bot.editMessageText('Error, failed to get data', { chat_id: chatId, message_id: load.message_id })
         }
@@ -104,9 +104,9 @@ class Spotify {
           await bot.editMessageText(`Downloading song ${getdata.metadata.title} - ${getdata.metadata.artists}, please wait...`, { chat_id: chatId, message_id: load.message_id })
           let buff = await Func.getBuffer(getdata.link);
           await fs.writeFileSync('/tmp/'+fname, buff);
-          await bot.sendAudio(chatId, '/tmp/'+fname, { caption: `Success download song ${getdata.metadata.title} - ${getdata.metadata.artists}`});
-          await bot.deleteMessage(chatId, load.message_id);
-          await fs.unlinkSync('/tmp/'+fname);
+          return bot.sendAudio(chatId, '/tmp/'+fname, { caption: `Success download song ${getdata.metadata.title} - ${getdata.metadata.artists}`});
+          //await bot.deleteMessage(chatId, load.message_id);
+          //await fs.unlinkSync('/tmp/'+fname);
         } else {
           await bot.editMessageText('Error, failed to get data', { chat_id: chatId, message_id: load.message_id })
         }
